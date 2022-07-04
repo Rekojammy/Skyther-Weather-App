@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =============== Font Awesome CDN ============================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ================= Box Icon CDN ================================== -->
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+
+
+    <title>Skyther - What's the weather today in your area?</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- =============== TailWind CSS CDN ================================= -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+    @media only screen and (min-width: 320px) {
+        .small {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <main onload="loaded()"
+        class="p-1 bg-white flex justify-center items-center h-screen lg:bg-[url('./image/360_F_363241433_YT4UVLrfHTsqmfL5b2OXo5oRzAAeQSQo.jpg')] lg:bg-cover lg:flex lg:justify-center">
+        <div class="relative mobile lg:hidden top h-64 w-full h-full px-5 py-4 rounded-lg bg-slate-900 bg-cover">
+            <img class="absolute right-0 bottom-0 h-full w-full rounded-lg opacity-50" id="bgImage"
+                src="" alt="">
+            <div class="absolute text-white">
+                <nav class="">
+                    <button class="hover:text-white relative"><i class="fa-solid fa-bars fa-lg"></i></button>
+                    <h1 class="text-center mb-5 font-bold text-xl">Skyther
+                        <br>
+                        What's The <span class="text-yellow-600">Weather</span> In Your <span
+                            class="text-yellow-600">City?</span>
+                    </h1>
+                </nav>
+
+                <form class="text-center" id="form1">
+                    <input
+                        class="input bg-slate-100 outline-0 opacity-70 px-3 py-1 text-black rounded-full border-slate-200 placeholder-slate-600 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"
+                        placeholder="Search your City..." id="lginput1" />
+                    <button class="bg-slate-100 opacity-70 text-slate-700 rounded-full p-1"><i class="fa-solid fa-magnifying-glass"
+                            style="width: 25px;" id="searchBtn"></i></button>
+                </form>
+
+                <div class="container text-center mt-4">
+                    <h2 class="text-sm">Weather in <br>
+                        <span class="text-4xl font-bold" id="country1"></span>
+                    </h2>
+
+                </div>
+
+                <div class="-mt-5 lg:hidden w-full bottom flex flex-col justify-center items-center h-64 md:h-[700px] h-80">
+
+                    <div class="icon-holder flex flex-row">
+                        <p class="need text-center z-50" id="need"></p>
+                        <img class="" width="75" src="" alt="" srcset="" id="needicon">
+                    </div>
+                    <div class="flex flex-col h-44 justify-between justify-center text-center">
+                        <div class="flex">
+                            <p class="font-bold text-7xl" id="temp1"></p>
+                        </div>
+
+                        <div class="flex text-center justify-center">
+                            <img src="" alt="" id="icon1">
+                            <p class="font-bold text-2xl" id="forecast1"></p>
+                        </div>
+
+
+                        <div class="flex gap-3 text-center justify-center" aria-label="Humidity">
+                            <box-icon class="-ml-7" type='solid' name='thermometer' color="#ffff"></box-icon>
+                            <p class="font-bold text-lg" id="humidity1"></p>
+                        </div> 
+
+                        <div class="flex text-center justify-center" aria-label="Wind Speed">
+                            <box-icon name='wind' color="#ffff"></box-icon>
+                            <p class="font-bold text-lg ml-3" id="windSpeed"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- for large screeens -->
+        <div class="small relative md:hidden lg:flex w-2/5 rounded-3xl h-[430px]">
+            <img id="lgBackground" class="absolute w-full h-full rounded-3xl opacity-50"
+                src="" alt="Weather">
+            <div class=" absolute weather w-full h-full rounded-3xl bg-slate-900 p-5"
+                style="background: rgba(53, 61, 54, 0.4);" id="weather">
+                <h1 class="text-center text-white font-bold text-3xl">Skyther
+                    <br>
+                    <p class="text-lg">What's The <span class="text-yellow-600">Weather</span> In Your <span
+                            class="text-yellow-600">City?</span></p>
+                </h1>
+                <form class="text-center mt-5" id="form">
+                    <input id="lginput"
+                        class="input w-1/2 bg-slate-600 px-5 py-2 text-white outline-0 rounded-full border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"
+                        placeholder="Search your City..." />
+                    <button id="search" class="bg-slate-600 text-white rounded-full p-2 ml-2">
+                        <i class="fa-solid fa-magnifying-glass" style="width: 25px;"></i></button>
+                </form>
+
+                <div class="font-bold text-white mt-5 text-2xl h-[215px] flex flex-col justify-between" id="smallcont">
+                    <h2 class="text-2xl">Weather Forcast in <span id="country"></span></h2>
+                    <p id="temp" class="font-bold text-5xl"></p>
+                    <div class="flex">
+                        <img id="icon">
+                        <p class="ml-3" id="forecast"></p>
+                    </div>
+                    <p>Humidity: <span id="humidity"></span></p> <br>
+                    <p>Wind Speed: <span id="speed"></span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
