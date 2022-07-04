@@ -69,11 +69,16 @@ let weather1 = {
             .catch(error => console.log(error));  // error handling 
     },
 
+    
     showWeather: function (data) {
         // const {name} = data
         // const {icons, descript} = data.weather
         // const {temperature, humid} = data.main
         // const {windspeed} = data.wind;
+        if (data.name == undefined) {
+            alert('City not Found! Please enter a valid city name')
+            return;
+        }
         country1.innerText = data.name;
         temperature1.innerText = data.main.temp + "°C";
         icon1.src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
@@ -170,6 +175,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 3000)
 });
 
+
+// =============== SHOWING WEATHER COMPLEMENTS ============================================================================
 function displayNeed() {
     setTimeout(() => {
         if (forecast1.innerText.includes('RAIN') || forecast1.innerText.includes('SHOWER')) {

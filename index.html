@@ -33,10 +33,10 @@
 <body>
     <main onload="loaded()"
         class="p-1 bg-white flex justify-center items-center h-screen lg:bg-[url('./image/360_F_363241433_YT4UVLrfHTsqmfL5b2OXo5oRzAAeQSQo.jpg')] lg:bg-cover lg:flex lg:justify-center">
-        <div class="relative mobile lg:hidden top h-64 w-full h-full px-5 py-4 rounded-lg bg-slate-900 bg-cover">
+        <div class="relative mobile lg:hidden top h-64 w-full h-full py-4 rounded-lg bg-slate-900 bg-cover">
             <img class="absolute right-0 bottom-0 h-full w-full rounded-lg opacity-50" id="bgImage"
                 src="" alt="">
-            <div class="absolute text-white">
+            <div class="absolute left-5 text-white">
                 <nav class="">
                     <button class="hover:text-white relative"><i class="fa-solid fa-bars fa-lg"></i></button>
                     <h1 class="text-center mb-5 font-bold text-xl">Skyther
@@ -54,38 +54,37 @@
                             style="width: 25px;" id="searchBtn"></i></button>
                 </form>
 
-                <div class="container text-center mt-4">
+                <div class="container text-center my-7">
                     <h2 class="text-sm">Weather in <br>
                         <span class="text-4xl font-bold" id="country1"></span>
                     </h2>
-
                 </div>
 
-                <div class="-mt-5 lg:hidden w-full bottom flex flex-col justify-center items-center h-64 md:h-[700px] h-80">
+                <div class="lg:hidden w-full bottom flex flex-col justify-center items-center h-64 md:h-[700px] h-full">
 
-                    <div class="icon-holder flex flex-row">
-                        <p class="need text-center z-50" id="need"></p>
-                        <img class="" width="75" src="" alt="" srcset="" id="needicon">
+                    <div class="icon-holder flex flex-row justify-center mt-5">
+                        <p class="need text-lg text-center z-50" id="need"></p>
+                        <img class="-mt-10" width="150" src="" alt="" srcset="" id="needicon">
                     </div>
-                    <div class="flex flex-col h-44 justify-between justify-center text-center">
-                        <div class="flex">
-                            <p class="font-bold text-7xl" id="temp1"></p>
+                    <div class="h-64 mt-5 flex flex-col justify-center justify-between text-center">
+                        <div class="text-center">
+                            <p class="font-bold text-7xl text-center" id="temp1"></p>
                         </div>
 
                         <div class="flex text-center justify-center">
                             <img src="" alt="" id="icon1">
-                            <p class="font-bold text-2xl" id="forecast1"></p>
+                            <p class="font-bold text-3xl" id="forecast1"></p>
                         </div>
 
 
                         <div class="flex gap-3 text-center justify-center" aria-label="Humidity">
                             <box-icon class="-ml-7" type='solid' name='thermometer' color="#ffff"></box-icon>
-                            <p class="font-bold text-lg" id="humidity1"></p>
-                        </div> 
+                            <p class="font-bold text-3xl" id="humidity1"></p>
+                        </div>
 
                         <div class="flex text-center justify-center" aria-label="Wind Speed">
                             <box-icon name='wind' color="#ffff"></box-icon>
-                            <p class="font-bold text-lg ml-3" id="windSpeed"></p>
+                            <p class="font-bold text-3xl ml-3" id="windSpeed"></p>
                         </div>
                     </div>
                 </div>
