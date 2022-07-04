@@ -174,7 +174,7 @@ function displayNeed() {
     setTimeout(() => {
         if (forecast1.innerText.includes('RAIN') || forecast1.innerText.includes('SHOWER')) {
             need.innerText = 'I think it is gonna Rain and you should go out with an Umbrella';
-            needicon.src = './iconimg/umbrella-and-rain-drops-removebg-preview (1).png';
+            needicon.src = './iconimg/white-umbrella-and-rain-drops-icon-isolated-vector-27847316-removebg-preview (1).png';
             let random = Math.floor(Math.random() * rainBg.length)
             bgImage.src = rainBg[random]
             lgBackground.src = rainBg[random]
@@ -217,5 +217,5 @@ function displayNeed() {
             need.innerText = 'It is an clear nice day. Wear Something nice!';
             needicon.src = ''
         }
-    }, 3000);
+    }, 5000);
 }
