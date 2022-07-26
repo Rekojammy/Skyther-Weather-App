@@ -255,6 +255,5 @@ menuBtn.addEventListener('click', () => {
 closeMenuBtn.addEventListener('click', () => {
     menu.classList.add('hidden')
     menuBtn.classList.remove('hidden')
-    closeMenuBtn.classList.add('hidden')
-    closeMenuBtn.firstElementChild.classList.add('text-black', 'left-3', 'top-3')
+    closeMenuBtn.classList.add('hidden');
 })
