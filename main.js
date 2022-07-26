@@ -15,6 +15,10 @@ const container = _("#weather");
 const smallcont = _('#smallcont');
 const lgBackground = _('#lgBackground');
 
+const menu = _('#menu');
+const menuBtn = _('#menuBtn');
+const closeMenuBtn = _('#closeMenuBtn');
+
 
 
 const form1 = _('#form1');
@@ -34,15 +38,24 @@ let defaultCity = 'Port Harcourt'
 
 // ============= Background Pictures ========================================================================
 
-let rainBg = ['./img/1506501941937.jpg--derry_weather_forecast_to_calm_but_rain_is_here_to_stay.jpg', './img/download (1).jpg', './img/rainy-and-windy-day-vector-27949378.jpg',
-    './img/standing-in-rain_0066f46bde.jpg', './img/under-rain-with-umbrella-man-vector-9432873.jpg', './img/istockphoto-1143045785-612x612.jpg']
-let sunBg = ['./img/1000_F_209646229_Rwy33Ec7lgKBNnFD2Wi6pSAHbICmauos.jpg', './img/3603-woman_waiting_for_someone-732x549-thumbnail.jpg', './img/istockphoto-1251502145-612x612.jpg']
-let cloudBg = ['./img/478d00efd85743b60593582f12fba67d.jpg',
-    './img/cloudscape-384672_960_720-1.jpg', './img/group-five-smiling-african-american-men-women-walking-outside-cloudy-weather-near-lake-exchange-students-russia_175356-4270.jpg',
-    './img/rain-lover-personality.jpg', './img/X7V35SIG6NGSDJPZDUBTVWQAGM.webp']
-let windBg = ['./img/istockphoto-155482741-612x612.jpg', './img/rainy-and-windy-day-vector-27949378.jpg']
-let winterBg = ['./img/photo-1545885785-910f3bbf07a8.jpg']
-let thunder = ['./img/Lightning Strike.jpg', './img/lightning-strike-over-a-town.jpeg', './img/photo-1545885785-910f3bbf07a8.jpg', './img/tornado_spotlight.jpg']
+let rainBg = ['./img/pexels-aline-nadai-1887792.jpg', './img/pexels-subrata-deb-2447531.jpg', './img/pexels-victoria-borodinova-1619719.jpg',
+            './img/pexels-andre-furtado-2961360.jpg', './img/pexels-nur-andi-ravsanjani-gusma-1915182.jpg', './img/pexels-oleksandr-pidvalnyi-2144326.jpg']
+
+let sunBg = ['./img/pexels-almada-studio-1869961.jpg', './img/pexels-guillaume-hankenne-2792078.jpg', 
+            './img/pexels-this-is-zun-1140703.jpg', './img/pexels-hitwave-12618632.jpg',  './img/pexels-jaime-reimer-2679814.jpg',  './img/pexels-lisa-2043035.jpg']
+
+let cloudBg = ['./img/pexels-alex-conchillos-3888585.jpg', './img/pexels-szabolcs-toth-3283907.jpg', './img/pexels-ave-calvar-martinez-3010340.jpg', 
+            './img/pexels-guilherme-rossi-1755683.jpg', './img/pexels-james-wheeler-1486974.jpg', './img/pexels-matheus-potsclam-barro-1828305.jpg', 
+            './img/pexels-pixabay-52531.jpg', './img/pexels-ricardo-esquivel-1806766.jpg']
+
+let windBg = ['./img/pexels-jan-koetsier-2724373.jpg', './img/pexels-wendy-wei-2820808.jpg', './img/pexels-anastasia-shuraeva-4513209.jpg', './img/pexels-mitch-kesler-2742684.jpg',
+             './img/pexels-ricardo-esquivel-2946870.jpg', './img/pexels-roberto-shumski-1903707.jpg', './img/pexels-messala-ciulla-936548.jpg']
+
+let winterBg = ['./img/photo-1545885785-910f3bbf07a8.jpg',]
+
+let clearBg = ['./img/pexels-vlad-chețan-2279334.jpg', './img/pexels-james-wheeler-1486974.jpg']
+
+let thunder = ['./img/pexels-lachlan-ross-6510344.jpg', './img/pexels-nikolett-emmert-2947810.jpg', './img/pexels-takenbytablo-680940.jpg', './img/pexels-юрий-лаймин-9184517.jpg']
 
 
 // =============== Getting Random Images ======================================================================
@@ -78,13 +91,14 @@ let weather1 = {
         if (data.name == undefined) {
             alert('City not Found! Please enter a valid city name')
             return;
+        } else {
+            country1.innerText = data.name;
+            temperature1.innerText = data.main.temp + "°C";
+            icon1.src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
+            forecast1.innerText = data.weather[0].description.toUpperCase();
+            windSpeed.innerText = data.wind.speed + "km/h";
+            humidity1.innerText = data.main.humidity + "%"
         }
-        country1.innerText = data.name;
-        temperature1.innerText = data.main.temp + "°C";
-        icon1.src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
-        forecast1.innerText = data.weather[0].description.toUpperCase();
-        windSpeed.innerText = data.wind.speed + "km/h";
-        humidity1.innerText = data.main.humidity + "%"
     },
 
     searchbar: function () {
@@ -222,7 +236,25 @@ function displayNeed() {
             lgBackground.src = windBg[random]
         } else {
             need.innerText = 'It is an clear nice day. Wear Something nice!';
-            needicon.src = ''
+            needicon.src = './iconimg/icon-rainbow-vector-1387400-removebg-preview.png';
+            let random = Math.floor(Math.random() * clearBg.length)
+            bgImage.src = clearBg[random]
+            lgBackground.src = clearBg[random]
         }
     }, 5000);
 }
+
+// =============== MENU AND UTILITIES ============================================================================
+
+menuBtn.addEventListener('click', () => {
+    menu.classList.remove('hidden')
+    menuBtn.classList.add('hidden')
+    closeMenuBtn.classList.remove('hidden')
+})
+
+closeMenuBtn.addEventListener('click', () => {
+    menu.classList.add('hidden')
+    menuBtn.classList.remove('hidden')
+    closeMenuBtn.classList.add('hidden')
+    closeMenuBtn.firstElementChild.classList.add('text-black', 'left-3', 'top-3')
+})

@@ -38,7 +38,15 @@
                 src="" alt="">
             <div class="absolute left-5 text-white">
                 <nav class="">
-                    <button class="hover:text-white relative"><i class="fa-solid fa-bars fa-lg"></i></button>
+                    <button class="hover:text-white relative z-50 left-2 top-3" id="menuBtn"><i class="fa-solid fa-bars fa-lg"></i></button>
+                    <button class="hover:text-white relative z-50 left-2 top-3 hidden" id="closeMenuBtn"><i class="text-black fa-solid fa-x fa-lg"></i></button>
+                    <div class="absolute hidden left-0 top-0 z-30 flex flex-col justify-between bg-white rounded-lg h-fit w-5/6 p-5" id="menu">
+                        <a href="index.html" class="hover:bg-blue-500 rounded p-3 mt-5"><p class="text-black font-bold text-lg">Home</p></a>
+                        <a href="#" class="hover:bg-blue-500 rounded p-3 my-7"><p class="text-black font-bold text-lg">Yesterday's Weather</p></a>
+                        <a href="#" class="hover:bg-blue-500 rounded p-3"><p class="text-black font-bold text-lg">Tomorrow's Weather</p></a>
+                        <a href="#" class="hover:bg-blue-500 rounded p-3 my-7"><p class="text-black font-bold text-lg">Weather in 4 days</p></a>
+                        <a href="README.md" class="hover:bg-blue-500 rounded p-3"><p class="text-black font-bold text-lg">About Syther</p></a>
+                    </div>
                     <h1 class="text-center mb-5 font-bold text-xl">Skyther
                         <br>
                         What's The <span class="text-yellow-600">Weather</span> In Your <span
@@ -63,10 +71,10 @@
                 <div class="lg:hidden w-full bottom flex flex-col justify-center items-center h-64 md:h-[700px] h-full">
 
                     <div class="icon-holder flex flex-row justify-center mt-5">
-                        <p class="need text-lg text-center z-50" id="need"></p>
+                        <p class="need text-lg text-center z-20" id="need"></p>
                         <img class="-mt-10" width="150" src="" alt="" srcset="" id="needicon">
                     </div>
-                    <div class="h-64 mt-5 flex flex-col justify-center justify-between text-center">
+                    <div class="h-56 mt-1 flex flex-col justify-center justify-between text-center">
                         <div class="text-center">
                             <p class="font-bold text-7xl text-center" id="temp1"></p>
                         </div>
