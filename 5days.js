@@ -127,19 +127,19 @@ let weather1 = {
             function myDate(e) {
                 switch (e) {
                     case 0: return "Sunday"
-                    break;
-                  case 1: return "Monday"
-                    break;
+                        break;
+                    case 1: return "Monday"
+                        break;
                     case 2: return "Tuesday"
-                    break;
+                        break;
                     case 3: return "Wednesday"
-                    break;
+                        break;
                     case 4: return "Thursday"
-                    break;
+                        break;
                     case 5: return "Friday"
-                    break;
+                        break;
                     case 6: return "Saturday"
-                    break;
+                        break;
                 }
               }
 
