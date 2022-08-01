@@ -145,7 +145,7 @@ let weather = {
                 this.showWeather(data);
             }
             )
-            .catch(error => console.log(error));  // error handling 
+            .catch(error => console.log(error));  // error handling
     },
 
 
@@ -188,6 +188,27 @@ window.addEventListener('DOMContentLoaded', () => {
         showWeather()
     }, 3000)
 });
+
+
+// =============== Weather in 5 DAYS ======================================================================
+
+
+let weather5 = {
+    apiKey: "77ff7535c236abf0512b0f14802f9848",
+    apiUrl: "https://api.openweathermap.org/data/2.5/weather?q={cityname}&units=metric&appid={APIkey}",
+    fetchWeather: function (cityname) {
+        let url = this.apiUrl.replace("{cityname}", cityname).replace("{APIkey}", this.apiKey);
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.showWeather(data);
+            }
+            )
+            .catch(error => console.log(error));  // error handling
+    },
+
+}
 
 
 // =============== SHOWING WEATHER COMPLEMENTS ============================================================================
