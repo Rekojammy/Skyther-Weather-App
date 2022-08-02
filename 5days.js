@@ -145,12 +145,14 @@ let weather1 = {
                         break;
                     case 6: return "Saturday"
                         break;
+                    case 7: return "Sunday"
+                        break;
                 }
-              }
+            }
 
 
-            
-            
+
+
             let date1 = data.list[7].dt_txt;
             let arr1 = Array.from(date1)
             let date_out1 = arr1.splice(0, 9)
@@ -222,14 +224,14 @@ let weather1 = {
 }
 
 form1.addEventListener('submit', (e) => {
-    // displayNeed()
+    displayNeed()
     e.preventDefault()
     weather1.searchbar()
     showWeather()
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-    // displayNeed()
+    displayNeed()
     setTimeout(() => {
         weather1.loaded1()
         showWeather()
@@ -303,58 +305,44 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 // =============== SHOWING WEATHER COMPLEMENTS ============================================================================
-// function displayNeed() {
-//     setTimeout(() => {
-//         if (forecast1.innerText.includes('RAIN') || forecast1.innerText.includes('SHOWER')) {
-//             need.innerText = 'I think it is gonna Rain and you should go out with an Umbrella';
-//             needicon.src = './iconimg/white-umbrella-and-rain-drops-icon-isolated-vector-27847316-removebg-preview (1).png';
-//             let random = Math.floor(Math.random() * rainBg.length)
-//             bgImage.src = rainBg[random]
-//             lgBackground.src = rainBg[random]
+function displayNeed() {
+    setTimeout(() => {
+        if (forecast1.innerText.includes('RAIN') || forecast1.innerText.includes('SHOWER')) {
+            let random = Math.floor(Math.random() * rainBg.length)
+            bgImage.src = rainBg[random]
+            lgBackground.src = rainBg[random]
 
-//         } else if (forecast1.innerText.includes('SUNNY') || forecast1.innerText.includes('SUN')) {
-//             need.innerText = 'It is probably a Sunny weather wear Something light and Chill out!';
-//             needicon.src = './iconimg/pineapple-shake-blue-pina-colada-drink-cocktail-milkshake-removebg-preview.png'
-//             let random = Math.floor(Math.random() * sunBg.length)
-//             bgImage.src = sunBg[random]
-//             lgBackground.src = sunBg[random]
+        } else if (forecast1.innerText.includes('SUNNY') || forecast1.innerText.includes('SUN')) {
+            let random = Math.floor(Math.random() * sunBg.length)
+            bgImage.src = sunBg[random]
+            lgBackground.src = sunBg[random]
 
-//         } else if (forecast1.innerText.includes('CLOUDS') || forecast1.innerText.includes('CLOUDY')) {
-//             need.innerText = 'It is probably gonna be Cloudy with some Winds. Wear a coat';
-//             needicon.src = './iconimg/LjecRSc3LVNrbvM-removebg-preview.png'
-//             let random = Math.floor(Math.random() * cloudBg.length)
-//             bgImage.src = cloudBg[random]
-//             lgBackground.src = cloudBg[random]
+        } else if (forecast1.innerText.includes('CLOUDS') || forecast1.innerText.includes('CLOUDY')) {
+            let random = Math.floor(Math.random() * cloudBg.length)
+            bgImage.src = cloudBg[random]
+            lgBackground.src = cloudBg[random]
 
-//         } else if (forecast1.innerText.includes('SNOW') || forecast1.innerText.includes('WINTER')) {
-//             need.innerText = 'The Snow is coming. Wear a Jacket or a Coat';
-//             needicon.src = './iconimg/1540837275-1505507422-llbean-ultrawarm-coat-1-1540837260-removebg-preview.png'
-//             let random = Math.floor(Math.random() * cloudBg.length)
-//             bgImage.src = winterBg[random]
-//             lgBackground.src = winterBg[random]
+        } else if (forecast1.innerText.includes('SNOW') || forecast1.innerText.includes('WINTER')) {
+            let random = Math.floor(Math.random() * cloudBg.length)
+            bgImage.src = winterBg[random]
+            lgBackground.src = winterBg[random]
 
-//         } else if (forecast1.innerText.includes('THUNDER') || forecast1.innerText.includes('LIGHTENING')) {
-//             need.innerText = 'Close your ears and stay at home. It is gonna be loud outside with some Thunder claps!';
-//             needicon.src = './iconimg/a-humble-judge-of-cloud-stormy-cartoon-character-design-wearing-glasses-2BFGN2H-removebg-preview.png'
-//             let random = Math.floor(Math.random() * cloudBg.length)
-//             bgImage.src = thunder[random]
-//             lgBackground.src = thunder[random]
+        } else if (forecast1.innerText.includes('THUNDER') || forecast1.innerText.includes('LIGHTENING')) {
+            let random = Math.floor(Math.random() * cloudBg.length)
+            bgImage.src = thunder[random]
+            lgBackground.src = thunder[random]
 
-//         } else if (forecast1.innerText.includes('WIND') || forecast1.innerText.includes('WINDY')) {
-//             need.innerText = 'Hold your breath and you hats. It is gonna be a Windy day!';
-//             needicon.src = './iconimg/855-8559362_rain-images-cartoon-umbrella-and-wind-clipart-removebg-preview.png'
-//             let random = Math.floor(Math.random() * cloudBg.length)
-//             bgImage.src = windBg[random]
-//             lgBackground.src = windBg[random]
-//         } else {
-//             need.innerText = 'It is an clear nice day. Wear Something nice!';
-//             needicon.src = './iconimg/icon-rainbow-vector-1387400-removebg-preview.png';
-//             let random = Math.floor(Math.random() * clearBg.length)
-//             bgImage.src = clearBg[random]
-//             lgBackground.src = clearBg[random]
-//         }
-//     }, 5000);
-// }
+        } else if (forecast1.innerText.includes('WIND') || forecast1.innerText.includes('WINDY')) {
+            let random = Math.floor(Math.random() * cloudBg.length)
+            bgImage.src = windBg[random]
+            lgBackground.src = windBg[random]
+        } else {
+            let random = Math.floor(Math.random() * clearBg.length)
+            bgImage.src = clearBg[random]
+            lgBackground.src = clearBg[random]
+        }
+    }, 5000);
+}
 
 // =============== MENU AND UTILITIES ============================================================================
 
