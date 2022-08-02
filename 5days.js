@@ -39,22 +39,27 @@ let defaultCity = 'Port Harcourt';
 const day1 = _('#day1');
 const icons1 = _('#icons1');
 const temper1 = _('#temper1');
+const score1 = _('#score1');
 
 const day2 = _('#day2');
 const icons2 = _('#icons2');
 const temper2 = _('#temper2');
+const score2 = _('#score2');
 
 const day3 = _('#day3');
 const icons3 = _('#icons3');
 const temper3 = _('#temper3');
+const score3 = _('#score3');
 
 const day4 = _('#day4');
 const icons4 = _('#icons4');
 const temper4 = _('#temper4');
+const score4 = _('#score4');
 
 const day5 = _('#day5');
 const icons5 = _('#icons5');
 const temper5 = _('#temper5');
+const score5 = _('#score5');
 
 
 // ============= Background Pictures ========================================================================
@@ -154,6 +159,7 @@ let weather1 = {
             console.log(final1)
             day1.innerText = myDate(final1);
             temper1.innerText = data.list[7].main.temp + "°C";
+            score1.innerText = data.list[7].weather[0].main.toUpperCase();
             icons1.src = "https://openweathermap.org/img/wn/" + data.list[7].weather[0].icon + ".png";
 
 
@@ -165,6 +171,7 @@ let weather1 = {
             console.log(final2)
             day2.innerText = myDate(final2);
             temper2.innerText = data.list[15].main.temp + "°C";
+            score2.innerText = data.list[15].weather[0].main.toUpperCase();
             icons2.src = "https://openweathermap.org/img/wn/" + data.list[15].weather[0].icon + ".png";
 
 
@@ -176,6 +183,7 @@ let weather1 = {
             console.log(final3)
             day3.innerText = myDate(final3);
             temper3.innerText = data.list[23].main.temp + "°C";
+            score3.innerText = data.list[23].weather[0].main.toUpperCase();
             icons3.src = "https://openweathermap.org/img/wn/" + data.list[23].weather[0].icon + ".png";
 
 
@@ -187,6 +195,7 @@ let weather1 = {
             console.log(final4)
             day4.innerText = myDate(final4);
             temper4.innerText = data.list[31].main.temp + "°C";
+            score4.innerText = data.list[31].weather[0].main.toUpperCase();
             icons4.src = "https://openweathermap.org/img/wn/" + data.list[31].weather[0].icon + ".png";
 
 
@@ -198,6 +207,7 @@ let weather1 = {
             console.log(final5)
             day5.innerText = myDate(final5);
             temper5.innerText = data.list[39].main.temp + "°C";
+            score5.innerText = data.list[39].weather[0].main.toUpperCase();
             icons5.src = "https://openweathermap.org/img/wn/" + data.list[39].weather[0].icon + ".png";
         }
     },
