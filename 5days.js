@@ -145,8 +145,6 @@ let weather1 = {
                         break;
                     case 6: return "Saturday"
                         break;
-                    case 7: return "Sunday"
-                        break;
                 }
             }
 
@@ -158,8 +156,9 @@ let weather1 = {
             let date_out1 = arr1.splice(0, 9)
             let time_out1 = arr1.splice(1, 9)
             let final1 = Number(arr1.toString())
-            console.log(final1)
-            day1.innerText = myDate(final1);
+            const d1 = new Date(date1);
+            let days1 = d1.getDay();
+            day1.innerText = myDate(days1);
             temper1.innerText = data.list[7].main.temp + "°C";
             score1.innerText = data.list[7].weather[0].main.toUpperCase();
             icons1.src = "https://openweathermap.org/img/wn/" + data.list[7].weather[0].icon + ".png";
@@ -170,8 +169,9 @@ let weather1 = {
             let date_out2 = arr2.splice(0, 9)
             let time_out2 = arr2.splice(1, 9)
             let final2 = Number(arr2.toString())
-            console.log(final2)
-            day2.innerText = myDate(final2);
+            const d2 = new Date(date2);
+            let days2 = d2.getDay();
+            day2.innerText = myDate(days2);
             temper2.innerText = data.list[15].main.temp + "°C";
             score2.innerText = data.list[15].weather[0].main.toUpperCase();
             icons2.src = "https://openweathermap.org/img/wn/" + data.list[15].weather[0].icon + ".png";
@@ -182,8 +182,9 @@ let weather1 = {
             let date_out3 = arr3.splice(0, 9)
             let time_out3 = arr3.splice(1, 9)
             let final3 = Number(arr3.toString())
-            console.log(final3)
-            day3.innerText = myDate(final3);
+            const d3 = new Date(date3);
+            let days3 = d3.getDay();
+            day3.innerText = myDate(days3);
             temper3.innerText = data.list[23].main.temp + "°C";
             score3.innerText = data.list[23].weather[0].main.toUpperCase();
             icons3.src = "https://openweathermap.org/img/wn/" + data.list[23].weather[0].icon + ".png";
@@ -194,8 +195,9 @@ let weather1 = {
             let date_out4 = arr4.splice(0, 9)
             let time_out4 = arr4.splice(1, 9)
             let final4 = Number(arr4.toString())
-            console.log(final4)
-            day4.innerText = myDate(final4);
+            const d4 = new Date(date4);
+            let days4 = d4.getDay();
+            day4.innerText = myDate(days4);
             temper4.innerText = data.list[31].main.temp + "°C";
             score4.innerText = data.list[31].weather[0].main.toUpperCase();
             icons4.src = "https://openweathermap.org/img/wn/" + data.list[31].weather[0].icon + ".png";
@@ -206,8 +208,9 @@ let weather1 = {
             let date_out5 = arr5.splice(0, 9)
             let time_out5 = arr5.splice(1, 9)
             let final5 = Number(arr5.toString())
-            console.log(final5)
-            day5.innerText = myDate(final5);
+            const d5 = new Date(date5);
+            let days5 = d5.getDay();
+            day5.innerText = myDate(days5);
             temper5.innerText = data.list[39].main.temp + "°C";
             score5.innerText = data.list[39].weather[0].main.toUpperCase();
             icons5.src = "https://openweathermap.org/img/wn/" + data.list[39].weather[0].icon + ".png";
