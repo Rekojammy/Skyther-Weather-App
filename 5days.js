@@ -152,10 +152,6 @@ let weather1 = {
 
 
             let date1 = data.list[7].dt_txt;
-            let arr1 = Array.from(date1)
-            let date_out1 = arr1.splice(0, 9)
-            let time_out1 = arr1.splice(1, 9)
-            let final1 = Number(arr1.toString())
             const d1 = new Date(date1);
             let days1 = d1.getDay();
             day1.innerText = myDate(days1);
@@ -165,10 +161,6 @@ let weather1 = {
 
 
             let date2 = data.list[15].dt_txt;
-            let arr2 = Array.from(date2)
-            let date_out2 = arr2.splice(0, 9)
-            let time_out2 = arr2.splice(1, 9)
-            let final2 = Number(arr2.toString())
             const d2 = new Date(date2);
             let days2 = d2.getDay();
             day2.innerText = myDate(days2);
@@ -178,10 +170,6 @@ let weather1 = {
 
 
             let date3 = data.list[23].dt_txt;
-            let arr3 = Array.from(date3)
-            let date_out3 = arr3.splice(0, 9)
-            let time_out3 = arr3.splice(1, 9)
-            let final3 = Number(arr3.toString())
             const d3 = new Date(date3);
             let days3 = d3.getDay();
             day3.innerText = myDate(days3);
@@ -191,10 +179,6 @@ let weather1 = {
 
 
             let date4 = data.list[31].dt_txt;
-            let arr4 = Array.from(date4)
-            let date_out4 = arr4.splice(0, 9)
-            let time_out4 = arr4.splice(1, 9)
-            let final4 = Number(arr4.toString())
             const d4 = new Date(date4);
             let days4 = d4.getDay();
             day4.innerText = myDate(days4);
@@ -204,10 +188,6 @@ let weather1 = {
 
 
             let date5 = data.list[39].dt_txt;
-            let arr5 = Array.from(date5)
-            let date_out5 = arr5.splice(0, 9)
-            let time_out5 = arr5.splice(1, 9)
-            let final5 = Number(arr5.toString())
             const d5 = new Date(date5);
             let days5 = d5.getDay();
             day5.innerText = myDate(days5);
